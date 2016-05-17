@@ -1,9 +1,17 @@
+function insertError(){
+	var sidebar = document.getElementById("home-value-wrapper")
+    var tacoDiv = document.createElement("div")
+    tacoDiv.innerHTML = "<span>Error searching for nearby Taco Bell</span>"
+    sidebar.appendChild(tacoDiv)
+    tacoDiv.style.marginTop = "10px"
+}
+
 function insertInfo(distance, duration)
 {
     console.debug("Inserting Info")
     var sidebar = document.getElementById("home-value-wrapper")
     var tacoDiv = document.createElement("div")
-    tacoDiv.innerHTML = "<span>This house is " + distance + " (" + duration + ") " + "from the nearest Taco Bell</span>"
+    tacoDiv.innerHTML = "<span><strong>Bell Finder</strong></br>This house is " + distance + " (" + duration + ") " + "from the nearest Taco Bell</span>"
     sidebar.appendChild(tacoDiv)
     tacoDiv.style.marginTop = "10px"
 }
@@ -27,8 +35,12 @@ function getLatLon(address){
     if (xhttp.readyState == 4 && xhttp.status == 200) {
       var response = xhttp.responseText
       var obj = JSON.parse(response)
-      var location = obj.results[0].geometry.location
-      findTacos(location.lat, location.lng)
+      if (obj.results[0] != null){
+      	var location = obj.results[0].geometry.location
+      	findTacos(location.lat, location.lng)
+      }else{
+      	insertError()
+      }
     	}
   	};
   	xhttp.open("GET", url, true);
@@ -43,8 +55,12 @@ function findTacos(lat, lon) {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
       var response = xhttp.responseText
       var obj = JSON.parse(response)
-      var location = obj.results[0].geometry.location
-      timeDistance(lat, lon, location.lat, location.lng)
+      if (obj.results[0] != null){
+      	var location = obj.results[0].geometry.location
+      	timeDistance(lat, lon, location.lat, location.lng)
+      }else{
+      	insertError()
+      }
     	}
   	};
   	xhttp.open("GET", url, true);
@@ -59,8 +75,12 @@ function timeDistance(lat1, lon1, lat2, lon2){
     if (xhttp.readyState == 4 && xhttp.status == 200) {
       var response = xhttp.responseText
       var obj = JSON.parse(response)
-      var message = obj.rows[0].elements[0]
-      insertInfo(message.distance.text,message.duration.text)
+      if (obj.rows[0] != null){
+      	var message = obj.rows[0].elements[0]
+      	insertInfo(message.distance.text,message.duration.text)
+      }else{
+      	insertError()
+      }
     	}
   	};
   	xhttp.open("GET", url, true);
@@ -87,5 +107,3 @@ setInterval(function() {
 		}
 	}
 }, 1000);
-
-console.debug("AIzaSyA4HoX5CPuaTrKmXSQZq_mJ7LZElQyazZ8")
