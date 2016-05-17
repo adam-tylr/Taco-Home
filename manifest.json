@@ -1,13 +1,25 @@
 {
   "manifest_version": 2,
-  "name": "Bell Locator",
+  "name": "Bell Finder",
   "version": "0.1",
   "permissions": ["<all_urls>"],
+  
+  "author": "Adam Tyler",
+  "offline_enabled": false,
+  
+  "description": "A Chrome Extension that adds time and distance information for the nearest Taco Bell Location to each home detail on Zillow.",
+  
+  "icons": {
+    "32" : "icon32.png",
+    "64" : "icon64.png",
+    "128" : "icon128.png"
+  },
+  
   "content_scripts": [
   	{
-    	"matches": ["http://www.zillow.com/*"],
-    	"js": ["content.js"],
-    	"run_at": "document_end"
+      "matches": ["http://www.zillow.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
   	}
   ]
 }
