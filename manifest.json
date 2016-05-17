@@ -1,0 +1,13 @@
+{
+  "manifest_version": 2,
+  "name": "Bell Locator",
+  "version": "0.1",
+  "permissions": ["<all_urls>"],
+  "content_scripts": [
+  	{
+    	"matches": ["http://www.zillow.com/*"],
+    	"js": ["content.js"],
+    	"run_at": "document_end"
+  	}
+  ]
+}
