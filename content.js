@@ -28,7 +28,7 @@ function getAddress(addressElement){
 
 function getLatLon(address){
 	address.split(' ').join('+')
-	var url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + address + '&key=AIzaSyAn4kHcCvbQ3IUDQpo7JiGF3SzCdkojuAI'
+	var url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + address + '&key='
 	
 	var xhttp = new XMLHttpRequest();
   	xhttp.onreadystatechange = function() {
@@ -48,7 +48,7 @@ function getLatLon(address){
 }
 
 function findTacos(lat, lon) {
-	var url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + lat + ',' + lon + '&type=restaurant&name=taco%20bell&rankby=distance&key=AIzaSyAn4kHcCvbQ3IUDQpo7JiGF3SzCdkojuAI'
+	var url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + lat + ',' + lon + '&type=restaurant&name=taco%20bell&rankby=distance&key='
 	
 	var xhttp = new XMLHttpRequest();
   	xhttp.onreadystatechange = function() {
@@ -68,7 +68,7 @@ function findTacos(lat, lon) {
 }
 
 function timeDistance(lat1, lon1, lat2, lon2){
-	url = 'https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=' + lat1 + ',' + lon1 + '&destinations=' + lat2 + ',' + lon2 + '&key=AIzaSyAn4kHcCvbQ3IUDQpo7JiGF3SzCdkojuAI'
+	url = 'https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=' + lat1 + ',' + lon1 + '&destinations=' + lat2 + ',' + lon2 + '&key='
 	
 	var xhttp = new XMLHttpRequest();
   	xhttp.onreadystatechange = function() {
