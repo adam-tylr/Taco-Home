@@ -7,4 +7,5 @@ Reddit post:
 https://www.reddit.com/r/tacobell/comments/4jtiv5/i_made_a_chrome_extension_that_tells_you_how_far/
 
 Taco Bell Tweet:
-![alt tag](https://raw.githubusercontent.com/adam-tylr/Taco-Home/master/tweet.PNG)
+
+![alt tag](https://raw.githubusercontent.com/adam-tylr/Taco-Home/master/tweet.jpg)
