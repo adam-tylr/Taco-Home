@@ -3,9 +3,13 @@ This Chrome extension makes searching for a home easier by including important h
 
 Taco Home uses the Google Maps API to find the coordinates of the address listed on Zillow then searches for the coordinates of the nearest Taco Bell. 
 
-Reddit post:
+##Screenshot:
+
+![alt tag](https://raw.githubusercontent.com/adam-tylr/Taco-Home/master/screenshot.png)
+
+##Reddit post:
 https://www.reddit.com/r/tacobell/comments/4jtiv5/i_made_a_chrome_extension_that_tells_you_how_far/
 
-Taco Bell Tweet:
+##Taco Bell Tweet:
 
 ![alt tag](https://raw.githubusercontent.com/adam-tylr/Taco-Home/master/tweet.jpg)
